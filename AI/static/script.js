@@ -27,13 +27,15 @@ fileInput.onchange = (event) => {
 
   reader.readAsDataURL(file);
 };
-
-uploadButton.addEventListener('click', function () {
-  uploadForm.classList.toggle('hidden')
-  const reader = new FileReader();
-  reader.onload = function () {
-    preview.src = reader.result;
-    preview.classList.remove('hidden');
-  };
-  reader.readAsDataURL(input.files[0]);
-});
+uploadButton.addEventListener('click',function(){
+  console.log("the button is clicked")
+})
+// uploadButton.addEventListener('click', function () {
+//   uploadForm.classList.toggle('hidden')
+//   const reader = new FileReader();
+//   reader.onload = function () {
+//     preview.src = reader.result;
+//     preview.classList.remove('hidden');
+//   };
+//   reader.readAsDataURL(input.files[0]);
+// });

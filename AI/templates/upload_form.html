@@ -14,23 +14,27 @@
 <body>
     <div class="container">
         <div class="input-container">
-            <input type="file" name="image" id="file-input">
-            <div class="image-container">
-            <img src="#" id="preview" class="preview-image hidden" width="500" height="600">
-            </div>
-            <form>  
-            <label for="dropdown-button">Select a panel type:</label>
-            <select id="dropdown-button">
-                <option value="none">--Select--</option>
-                <option value="electric">Electric Panel</option>
-                <option value="solar">Solar Panel</option>
-                <option value="thermal">Thermal Panel</option>
-            </select>
+            <form method="POST" action="{% url 'upload' %}" enctype="multipart/form-data" id="image-upload-form" >
+
+                <input type="file" name="image" id="file-input">
+                <div class="image-container">
+                    <img src="#" id="preview" class="preview-image hidden" width="500" height="600">
+                </div>
+                <!-- <form >   -->
+                    <label for="dropdown-button">Select a panel type:</label>
+                    <select id="dropdown-button">
+                        <option value="none">--Select--</option>
+                        <option value="electric">Electric Panel</option>
+                        <option value="solar">Solar Panel</option>
+                        <option value="thermal">Thermal Panel</option>
+                    </select>
+                <!-- </form> -->
+                <button id="upload-button">Submit</button>
+                
             </form>
-            <button id="upload-button">Submit</button>
         </div>
     
-        <div class="preview-container">
+        <!-- <div class="preview-container">
             <form id="upload-form" class="hidden">
                 <label for="problem-select">Select a problem:</label>
                 <select id="problem-select" name="problem">
@@ -41,7 +45,7 @@
                 <button type="submit">Submit</button>
             </form>
             
-        </div>
+        </div> -->
     </div>
 <script src="{% static 'script.js' %}"></script>
 
