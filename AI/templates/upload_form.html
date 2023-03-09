@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image_upload</title>
+    <!-- <link rel="stylesheet" type="text/css" href="/AI/static/style.css"> -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="file" name="image" id="file-input">
+            <div class="image-container">
+            <img src="#" id="preview" class="preview-image hidden" width="500" height="600">
+            </div>
+            <form>  
+            <label for="dropdown-button">Select a panel type:</label>
+            <select id="dropdown-button">
+                <option value="none">--Select--</option>
+                <option value="electric">Electric Panel</option>
+                <option value="solar">Solar Panel</option>
+                <option value="thermal">Thermal Panel</option>
+            </select>
+            </form>
+            <button id="upload-button">Submit</button>
+        </div>
+    
+        <div class="preview-container">
+            <form id="upload-form" class="hidden">
+                <label for="problem-select">Select a problem:</label>
+                <select id="problem-select" name="problem">
+                <option value="option1">Option 1 - Description of option 1</option>
+                <option value="option2">Option 2 - Description of option 2</option>
+                <option value="option3">Option 3 - Description of option 3</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+<script src="{% static 'script.js' %}"></script>
+
+</body>
+</html>
