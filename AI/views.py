@@ -5,8 +5,9 @@ from django.http import HttpResponse
 from django.conf import settings
 import os
 from django.views.decorators.csrf import csrf_exempt
-@csrf_exempt
+from .ThermalNXG.new import fun
 
+@csrf_exempt
 def upload_image(request):
     if request.method == 'POST':
         # Retrieve the uploaded file from the request
@@ -39,5 +40,11 @@ def upload_image(request):
         # If the request method is not POST, render the file upload form
         return render(request, 'upload_form.html')
 
+
 def success_page(request):
+    fun()
     return render(request, 'success.html')
+
+
+
+
